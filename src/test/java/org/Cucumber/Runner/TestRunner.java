@@ -10,7 +10,8 @@ import cucumber.api.junit.Cucumber;
 		features = "src/test/resources/Feature/Facebook.feature",
 		glue = {"stepdefinition"}, 
 		tags = {"@fb"}, 
-		plugin = "html:target",
+	//	plugin = "html:target",
+		plugin = "json: src/test/java/report.json",
 		dryRun = false)
 public class TestRunner {
 
