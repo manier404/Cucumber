@@ -7,11 +7,11 @@ import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features = "src/test/resources/Feature/FileName.feature",
-		glue = "src/test/java/stepdefinition", 
-		tags = {"@sanity","@smoke"}, 
+		features = "src/test/resources/Feature/Facebook.feature",
+		glue = {"stepdefinition"}, 
+		tags = {"@fb"}, 
 		plugin = "html:target",
-		dryRun = true)
+		dryRun = false)
 public class TestRunner {
 
 }

@@ -1,4 +1,4 @@
-@tag
+@Regression
 Feature: Login_Page_Facebook
 
   @tag1

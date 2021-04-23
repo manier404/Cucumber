@@ -1,13 +1,19 @@
 package org.cuumber.resource;
 
+import java.io.File;
+import java.io.IOException;
+
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.io.FileHandler;
 
-public class BaseClass {
+public class BaseClass1 {
 
-protected WebDriver driver;
+protected static WebDriver driver;
 
 //1
 public WebDriver getChromeDriver() {
@@ -34,6 +40,15 @@ public void textBox(WebElement element, String Name) {
 public void btnClick(WebElement clickaction) {
 	
 	clickaction.click();
+}
+public void screenshot(String name) {
+	TakesScreenshot ts = (TakesScreenshot)driver;
+	try {
+		FileHandler.copy(ts.getScreenshotAs(OutputType.FILE), new File ("C:\\Users\\Dell\\Desktop\\screenshot"+name+".jpg"));
+	} catch (IOException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	} 
 }
 //6
 public void quitBrowser() {
